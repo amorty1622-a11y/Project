@@ -2,16 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class SpecializationCard extends StatelessWidget {
-  final String title;
+  final String name;
   final IconData icon;
-  final Color color;
   final VoidCallback onTap;
 
   const SpecializationCard({
     super.key,
-    required this.title,
+    required this.name,
     required this.icon,
-    required this.color,
     required this.onTap,
   });
 
@@ -20,8 +18,6 @@ class SpecializationCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        width: 100.w,
-        margin: EdgeInsets.only(right: 15.w),
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(16),
@@ -40,26 +36,24 @@ class SpecializationCard extends StatelessWidget {
               width: 50.w,
               height: 50.w,
               decoration: BoxDecoration(
-                color: color.withOpacity(0.1),
+                color: const Color(0xFF1E88E5).withOpacity(0.1),
                 borderRadius: BorderRadius.circular(25),
               ),
               child: Icon(
                 icon,
-                color: color,
-                size: 24.w,
+                size: 25.w,
+                color: const Color(0xFF1E88E5),
               ),
             ),
-            SizedBox(height: 12.h),
+            SizedBox(height: 15.h),
             Text(
-              title,
+              name,
               style: TextStyle(
-                fontSize: 12.sp,
+                fontSize: 14.sp,
                 fontWeight: FontWeight.w600,
                 color: Colors.black87,
               ),
               textAlign: TextAlign.center,
-              maxLines: 2,
-              overflow: TextOverflow.ellipsis,
             ),
           ],
         ),

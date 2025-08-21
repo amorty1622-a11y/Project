@@ -4,7 +4,6 @@ targets:
       json_serializable:
         options:
           include_if_null: false
-          explicit_to_json: true
       freezed:
         options:
           copy_with: true
